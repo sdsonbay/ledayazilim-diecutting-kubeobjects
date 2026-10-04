@@ -83,6 +83,7 @@ SQL
 encrypt_to() {
   local target="$1"
   local plain="${target%.enc.yaml}.plain.yaml"
+  mkdir -p "$(dirname "$target")"
   cat > "$plain"
   sops --encrypt --filename-override "$target" "$plain" > "$target"
   rm -f "$plain"
