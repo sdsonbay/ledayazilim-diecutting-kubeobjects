@@ -14,6 +14,7 @@ configMapGenerator:
   - name: leda-diecutting-api-env
     literals:
       - APP_ENV=dev
+      - MOCK_PAYMENTS=true
       - PUBLIC_BASE_URL=https://dev-api-diecutting.ledayazilim.com
       - CORS_ORIGINS=https://dev-diecutting.ledayazilim.com,http://localhost:8081,http://localhost:19006
       - GUEST_CREDITS=3
