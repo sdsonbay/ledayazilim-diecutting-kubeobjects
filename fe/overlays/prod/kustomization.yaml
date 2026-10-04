@@ -28,4 +28,4 @@ patches:
 images:
   - name: leda-diecutting-web
     newName: ghcr.io/sdsonbay/ledayazilim-diecutting-fe
-    newTag: "prod-pending"
+    newTag: "prod-8e4ee58"
