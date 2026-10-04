@@ -21,7 +21,7 @@ spec:
         app: leda-diecutting-web
     spec:
       imagePullSecrets:
-        - name: ghcr-pull
+        - name: ghcr-pull-web
       containers:
         - name: web
           image: leda-diecutting-web

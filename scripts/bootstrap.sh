@@ -110,12 +110,15 @@ stringData:
   DATABASE_URL: postgres://diecutting_${env}:${pass}@${DB_HOST}:${DB_PORT}/diecutting_${env}
   AUTH_SECRET: ${jwt}
 YAML
+    # BE ve FE aynı namespace'te; ArgoCD'de sahiplik çakışmasın diye secret adları ayrı.
     for component in be fe; do
+      local secret_name="ghcr-pull"
+      [ "$component" = fe ] && secret_name="ghcr-pull-web"
       encrypt_to "${component}/overlays/${env}/secrets/ghcr-pull.enc.yaml" <<YAML
 apiVersion: v1
 kind: Secret
 metadata:
-  name: ghcr-pull
+  name: ${secret_name}
 type: kubernetes.io/dockerconfigjson
 stringData:
   .dockerconfigjson: '${dockercfg}'

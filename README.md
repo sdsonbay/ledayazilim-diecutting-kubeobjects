@@ -62,7 +62,7 @@ sops be/overlays/prod/secrets/api-secrets.enc.yaml
 | Dosya | Anahtarlar |
 |-------|------------|
 | `be/overlays/*/secrets/api-secrets.enc.yaml` | `DATABASE_URL`, `AUTH_SECRET` |
-| `{be,fe}/overlays/*/secrets/ghcr-pull.enc.yaml` | `.dockerconfigjson` (ghcr.io) |
+| `{be,fe}/overlays/*/secrets/ghcr-pull.enc.yaml` | `.dockerconfigjson` (ghcr.io); secret adı BE `ghcr-pull`, FE `ghcr-pull-web` |
 
 ## Geri alma
 
