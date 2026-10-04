@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: leda-diecutting-web
+  labels:
+    app: leda-diecutting-web
+spec:
+  type: ClusterIP
+  selector:
+    app: leda-diecutting-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

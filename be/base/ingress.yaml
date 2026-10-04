@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: leda-diecutting-api
+  labels:
+    app: leda-diecutting-api
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts: [API_HOST]
+      secretName: leda-diecutting-api-tls
+  rules:
+    - host: API_HOST
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: leda-diecutting-api
+                port:
+                  number: 8080

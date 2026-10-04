@@ -1,0 +1,5 @@
+# Netcup kümesindeki KSOPS age anahtarı (die-cut/kube-objects ile aynı alıcı).
+creation_rules:
+  - path_regex: (be|fe)/overlays/(dev|prod)/secrets/.*\.enc\.yaml$
+    encrypted_regex: ^(data|stringData)$
+    age: age1vdmj37l50h3dev3wqetnwe7sw8wfz0w488ezc5ysqw40h98azfzq2kyq49

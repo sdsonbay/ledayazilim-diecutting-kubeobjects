@@ -1,0 +1,5 @@
+.DS_Store
+*.plain.yaml
+**/secrets/*.yaml
+!**/secrets/*.enc.yaml
+.bootstrap/

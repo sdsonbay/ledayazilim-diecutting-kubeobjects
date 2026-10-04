@@ -1,0 +1,11 @@
+apiVersion: viaduct.ai/v1
+kind: ksops
+metadata:
+  name: leda-diecutting-api-secrets
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: ksops
+files:
+  - secrets/api-secrets.enc.yaml
+  - secrets/ghcr-pull.enc.yaml

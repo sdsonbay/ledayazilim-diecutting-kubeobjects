@@ -1,0 +1,31 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: leda-diecutting-prod
+
+resources:
+  - ../../base
+
+generators:
+  - ksops.yaml
+
+configMapGenerator:
+  - name: leda-diecutting-web-env
+    literals:
+      - API_PROXY_PASS=http://leda-diecutting-api:8080/api/
+      - APP_ENV=prod
+
+patches:
+  - target: { kind: Ingress, name: leda-diecutting-web }
+    patch: |-
+      - op: replace
+        path: /spec/tls/0/hosts/0
+        value: diecutting.ledayazilim.com
+      - op: replace
+        path: /spec/rules/0/host
+        value: diecutting.ledayazilim.com
+
+images:
+  - name: leda-diecutting-web
+    newName: ghcr.io/sdsonbay/ledayazilim-diecutting-fe
+    newTag: "prod-pending"
