@@ -33,4 +33,4 @@ patches:
 images:
   - name: leda-diecutting-api
     newName: ghcr.io/sdsonbay/ledayazilim-diecutting-be
-    newTag: "prod-pending"
+    newTag: "prod-0ff770e"
