@@ -33,4 +33,4 @@ patches:
 images:
   - name: leda-diecutting-api
     newName: ghcr.io/sdsonbay/ledayazilim-diecutting-be
-    newTag: "sha-0ff770e"
+    newTag: "sha-188f3a5"
